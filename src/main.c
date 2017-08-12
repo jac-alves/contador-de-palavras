@@ -9,14 +9,36 @@
 
 int main() {
 
-  char c;
+  char c=1;
+  int i=0, j=0, f=0, d=0, s=0;
+  char frase[150];
 
-  c = 1;
 
-  while (c != '\n') {
+  while (c != '\n') //le string e salva em vetor
+  {
     scanf("%c", &c);
+    frase[i]=c;
+    i++;
   }
-
-  printf("1\n");
-  return 0;
+ 
+  for (d=0; d<=i; d++)
+  {
+    if (frase[d]==' ')
+    {
+      if (frase[d+1]>='A'||frase[d+1]>='0') //conta os espaços efetivos
+        j++;
+    }
+    
+    if (frase[d]==','||frase[d]=='-'||frase[d]=='.') //lida com a pontuação
+    {
+      if(frase[d+1]>='A')
+        s++;
+    }
+  }
+  f=s+j+1;
+  printf("%d\n", f);
+    return 0;
 }
+
+
+
